@@ -1,0 +1,15 @@
+rules:
+- DOMAIN,piggo.me,DIRECT
+- DOMAIN,international-gfe.download.nvidia.com,DIRECT
+- DOMAIN,daisuki.monikadesign.uk,DIRECT
+- DOMAIN,hdmayi.com,DIRECT
+- DOMAIN,rousi.zip,DIRECT
+- DOMAIN,tracker.0ff.cc,DIRECT
+- DOMAIN,tracker.carpt.net,DIRECT
+- DOMAIN,tracker.cyanbug.net,DIRECT
+- DOMAIN,tracker.hdarea.club,DIRECT
+- DOMAIN,tracker.m-team.io,DIRECT
+- DOMAIN,tracker.monikadesign.uk,DIRECT
+- DOMAIN,tracker.piggo.me,DIRECT
+- DOMAIN,tracker.zhuque.in,DIRECT
+- DOMAIN,v6tracker.m-team.io,DIRECT
