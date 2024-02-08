@@ -13,3 +13,6 @@ rules:
 - DOMAIN,tracker.piggo.me,DIRECT
 - DOMAIN,tracker.zhuque.in,DIRECT
 - DOMAIN,v6tracker.m-team.io,DIRECT
+- DOMAIN,t.audiences.me,DIRECT
+- DOMAIN,cinefiles.info,DIRECT
+- DOMAIN,tracker.cinefiles.info,DIRECT
