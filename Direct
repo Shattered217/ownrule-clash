@@ -3,7 +3,7 @@ rules:
 - DOMAIN,international-gfe.download.nvidia.com,DIRECT
 - DOMAIN,daisuki.monikadesign.uk,DIRECT
 - DOMAIN,hdmayi.com,DIRECT
-- DOMAIN,rousi.zip,DIRECT
+#- DOMAIN,rousi.zip,DIRECT
 - DOMAIN,tracker.0ff.cc,DIRECT
 - DOMAIN,tracker.carpt.net,DIRECT
 - DOMAIN,tracker.cyanbug.net,DIRECT
@@ -16,3 +16,7 @@ rules:
 - DOMAIN,t.audiences.me,DIRECT
 - DOMAIN,cinefiles.info,DIRECT
 - DOMAIN,tracker.cinefiles.info,DIRECT
+- DOMAIN,pttime.org,DIRECT
+- DOMAIN,creditracker.net,DIRECT
+- DOMAIN,fsm-us.eu.org,DIRECT
+- DOMAIN,kufei.org,DIRECT
