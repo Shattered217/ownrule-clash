@@ -20,3 +20,4 @@ rules:
 - DOMAIN,creditracker.net,DIRECT
 - DOMAIN,fsm-us.eu.org,DIRECT
 - DOMAIN,kufei.org,DIRECT
+- DOMAIN,hdtime.org,DIRECT
