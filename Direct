@@ -21,3 +21,5 @@ rules:
 - DOMAIN,fsm-us.eu.org,DIRECT
 - DOMAIN,kufei.org,DIRECT
 - DOMAIN,hdtime.org,DIRECT
+- DOMAIN,u2.dmhy.org,DIRECT
+- DOMAIN,daydream.dmhy.best,DIRECT
