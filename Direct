@@ -1,5 +1,6 @@
 rules:
 - DOMAIN,piggo.me,DIRECT
+- DOMAIN,t.hddolby.com,DIRECT
 - DOMAIN,international-gfe.download.nvidia.com,DIRECT
 - DOMAIN,daisuki.monikadesign.uk,DIRECT
 - DOMAIN,hdmayi.com,DIRECT
@@ -11,7 +12,9 @@ rules:
 - DOMAIN,tracker.m-team.io,DIRECT
 - DOMAIN,tracker.monikadesign.uk,DIRECT
 - DOMAIN,tracker.piggo.me,DIRECT
+- DOMAIN,piggo.me,DIRECT
 - DOMAIN,tracker.zhuque.in,DIRECT
+- DOMAIN,tracker.m-team.io,DIRECT
 - DOMAIN,v6tracker.m-team.io,DIRECT
 - DOMAIN,t.audiences.me,DIRECT
 - DOMAIN,cinefiles.info,DIRECT
@@ -23,3 +26,7 @@ rules:
 - DOMAIN,hdtime.org,DIRECT
 - DOMAIN,u2.dmhy.org,DIRECT
 - DOMAIN,daydream.dmhy.best,DIRECT
+- DOMAIN,18comic.vip,DIRECT
+- DOMAIN,hdfans.org,DIRECT
+- DOMAIN,on.springsunday.net,DIRECT
+- DOMAIN,hhanclub.top,DIRECT
