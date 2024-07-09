@@ -1,5 +1,6 @@
 rules:
-- DOMAIN,piggo.me,DIRECT
+- DOMAIN-SUFFIX,piggo.me,DIRECT
+- DOMAIN-SUFFIX,nodeseek.com,DIRECT
 - DOMAIN,t.hddolby.com,DIRECT
 - DOMAIN,international-gfe.download.nvidia.com,DIRECT
 - DOMAIN,daisuki.monikadesign.uk,DIRECT
@@ -23,5 +24,9 @@ rules:
 - DOMAIN,daydream.dmhy.best,DIRECT
 - DOMAIN,18comic.vip,DIRECT
 - DOMAIN,hdfans.org,DIRECT
-- DOMAIN,on.springsunday.net,DIRECT
+- DOMAIN-SUFFIX,springsunday.net,DIRECT
+- DOMAIN,tracker.hhan.club,DIRECT
 - DOMAIN,hhanclub.top,DIRECT
+- DOMAIN,tracker.keepfrds.com,DIRECT
+- DOMAIN,t.hdhome.org,DIRECT
+- DOMAIN,tracker.pterclub.com,DIRECT
