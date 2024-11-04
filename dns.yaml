@@ -1,0 +1,18 @@
+#国外dns分流规则
+payload:
+  - DOMAIN,public.dns.iij.jp
+  - DOMAIN-SUFFIX,opendns.com
+  - DOMAIN-SUFFIX,apad.pro
+  - DOMAIN-SUFFIX,dns.sb
+  - DOMAIN-SUFFIX,dns.google
+  - DOMAIN-SUFFIX,cloudflare-dns.com
+  - DOMAIN,dns.twnic.tw
+  - DOMAIN-SUFFIX,adguard.com
+  - DOMAIN-SUFFIX,quad9.net
+  - DOMAIN-SUFFIX,umbrella.com
+  - DOMAIN-SUFFIX,dns.yandex.net
+  - IP-CIDR,1.1.1.1/32
+  - IP-CIDR,1.0.0.1/32
+  - IP-CIDR,8.8.8.8/32
+  - IP-CIDR,8.8.4.4/32
+  - IP-CIDR,194.242.2.2/32
