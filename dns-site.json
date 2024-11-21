@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        public.dns.iij.jp
+        opendns.com
+        apad.pro
+        dns.sb
+        dns.google
+        cloudflare-dns.com
+        dns.twnic.tw
+        adguard.com
+        quad9.net
+        umbrella.com
+        dns.yandex.net
+      ]
+    }
+  ]
+}
