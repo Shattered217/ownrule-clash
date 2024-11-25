@@ -1,6 +1,6 @@
 #!/bin/bash
 # Ubuntu 20.04 FTP 一键配置脚本
-# 功能：安装并配置 vsftpd，创建 FTP 用户。
+# 功能：安装并配置 vsftpd，手动输入用户名和密码。
 
 # 确保以 root 或 sudo 权限运行
 if [ "$EUID" -ne 0 ]; then
@@ -38,11 +38,24 @@ listen_port=21
 ssl_enable=NO
 EOF
 
-# 第三步：创建 FTP 用户
-FTP_USER="ftpuser"
-FTP_PASSWORD="ftp123"
+# 第三步：手动输入 FTP 用户名和密码
+read -p "请输入 FTP 用户名（默认: ftpuser）： " FTP_USER
+FTP_USER=${FTP_USER:-ftpuser}  # 如果未输入用户名，使用默认值 ftpuser
+
+read -s -p "请输入 FTP 用户密码： " FTP_PASSWORD
+echo  # 换行
+read -s -p "请再次输入 FTP 用户密码： " FTP_PASSWORD_CONFIRM
+echo
+
+# 验证密码输入一致
+if [ "$FTP_PASSWORD" != "$FTP_PASSWORD_CONFIRM" ]; then
+  echo "两次密码输入不一致，请重新运行脚本并确保输入一致。"
+  exit 1
+fi
+
 FTP_HOME="/home/$FTP_USER/ftp"
 
+# 创建 FTP 用户
 echo "正在创建 FTP 用户：$FTP_USER"
 useradd -m -d $FTP_HOME -s /usr/sbin/nologin $FTP_USER
 echo -e "$FTP_PASSWORD\n$FTP_PASSWORD" | passwd $FTP_USER
@@ -67,9 +80,8 @@ systemctl enable vsftpd
 # 显示配置信息
 echo "====== 配置完成 ======"
 echo "FTP 用户：$FTP_USER"
-echo "FTP 密码：$FTP_PASSWORD"
+echo "FTP 密码：已设置"
 echo "FTP 主目录：$FTP_HOME"
 echo "FTP 上传目录：$UPLOAD_DIR"
-echo "请使用 FTP 客户端连接测试 (地址为服务器 IP 或域名)"
 
 exit 0
