@@ -1,25 +1,25 @@
 #!/bin/bash
-# Ubuntu 20.04 FTP 一键配置脚本
-# 功能：安装并配置 vsftpd，手动输入用户名和密码。
+# Ubuntu 20.04 FTP One-Click Setup Script
+# Purpose: Install and configure vsftpd, allow manual username and password input.
 
-# 确保以 root 或 sudo 权限运行
+# Ensure the script is run with root or sudo privileges
 if [ "$EUID" -ne 0 ]; then
-  echo "请使用 root 用户或加 sudo 执行脚本"
+  echo "Please run the script with root or sudo privileges."
   exit 1
 fi
 
-echo "====== 开始一键配置 FTP 服务 ======"
+echo "====== Starting FTP setup script ======"
 
-# 第一步：更新系统并安装 vsftpd
-echo "正在更新系统并安装 vsftpd..."
+# Step 1: Update system and install vsftpd
+echo "Updating system and installing vsftpd..."
 apt update && apt install -y vsftpd
 
-# 第二步：备份并配置 vsftpd
-echo "正在备份并配置 vsftpd..."
+# Step 2: Backup and configure vsftpd
+echo "Backing up and configuring vsftpd..."
 cp /etc/vsftpd.conf /etc/vsftpd.conf.bak
 
 cat > /etc/vsftpd.conf <<EOF
-# vsftpd 配置文件
+# vsftpd configuration file
 listen=YES
 anonymous_enable=NO
 local_enable=YES
@@ -38,50 +38,51 @@ listen_port=21
 ssl_enable=NO
 EOF
 
-# 第三步：手动输入 FTP 用户名和密码
-read -p "请输入 FTP 用户名（默认: ftpuser）： " FTP_USER
-FTP_USER=${FTP_USER:-ftpuser}  # 如果未输入用户名，使用默认值 ftpuser
+# Step 3: Allow manual username and password input
+read -p "Enter FTP username (default: ftpuser): " FTP_USER
+FTP_USER=${FTP_USER:-ftpuser}  # Default to 'ftpuser' if no username is entered
 
-read -s -p "请输入 FTP 用户密码： " FTP_PASSWORD
-echo  # 换行
-read -s -p "请再次输入 FTP 用户密码： " FTP_PASSWORD_CONFIRM
+read -s -p "Enter FTP user password: " FTP_PASSWORD
+echo  # New line
+read -s -p "Re-enter FTP user password: " FTP_PASSWORD_CONFIRM
 echo
 
-# 验证密码输入一致
+# Verify passwords match
 if [ "$FTP_PASSWORD" != "$FTP_PASSWORD_CONFIRM" ]; then
-  echo "两次密码输入不一致，请重新运行脚本并确保输入一致。"
+  echo "Passwords do not match. Please re-run the script and ensure they match."
   exit 1
 fi
 
 FTP_HOME="/home/$FTP_USER/ftp"
 
-# 创建 FTP 用户
-echo "正在创建 FTP 用户：$FTP_USER"
+# Create FTP user
+echo "Creating FTP user: $FTP_USER"
 useradd -m -d $FTP_HOME -s /usr/sbin/nologin $FTP_USER
 echo -e "$FTP_PASSWORD\n$FTP_PASSWORD" | passwd $FTP_USER
 
-# 设置用户目录权限
-echo "正在设置用户目录权限..."
+# Set directory permissions
+echo "Setting user directory permissions..."
 mkdir -p $FTP_HOME
 chown nobody:nogroup $FTP_HOME
 chmod a-w $FTP_HOME
 
-# 创建上传目录
+# Create upload directory
 UPLOAD_DIR="$FTP_HOME/upload"
 mkdir -p $UPLOAD_DIR
 chown $FTP_USER:$FTP_USER $UPLOAD_DIR
 chmod 755 $UPLOAD_DIR
 
-# 第四步：重启服务并设置开机自启
-echo "正在重启 vsftpd 服务..."
+# Step 4: Restart vsftpd service and enable on boot
+echo "Restarting vsftpd service..."
 systemctl restart vsftpd
 systemctl enable vsftpd
 
-# 显示配置信息
-echo "====== 配置完成 ======"
-echo "FTP 用户：$FTP_USER"
-echo "FTP 密码：已设置"
-echo "FTP 主目录：$FTP_HOME"
-echo "FTP 上传目录：$UPLOAD_DIR"
+# Display setup details
+echo "====== Setup Completed ======"
+echo "FTP User: $FTP_USER"
+echo "FTP Password: Set"
+echo "FTP Home Directory: $FTP_HOME"
+echo "FTP Upload Directory: $UPLOAD_DIR"
+echo "Please use an FTP client to connect and test (use your server's IP or domain)."
 
 exit 0
