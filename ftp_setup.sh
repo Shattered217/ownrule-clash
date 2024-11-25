@@ -5,7 +5,7 @@
 # 第一步，安装ftp
 apt-get -y install vsftpd
 # 第二步，更改配置文件
-mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.confbak
+mv /etc/vsftpd.conf /etc/vsftpd.confbak
 echo """anonymous_enable=NO
 local_enable=YES
 write_enable=YES
@@ -24,7 +24,7 @@ userlist_enable=YES
 tcp_wrappers=YES
 allow_writeable_chroot=YES
 chmod_enable=YES
-""" > /etc/vsftpd/vsftpd.conf
+""" > /etc/vsftpd.conf
 systemctl restart vsftpd
  
 grep "/sbin/nologin" /etc/shells || echo "/sbin/nologin" >> /etc/shells
