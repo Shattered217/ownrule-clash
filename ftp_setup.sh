@@ -36,6 +36,7 @@ pasv_min_port=40000
 pasv_max_port=45000
 listen_port=21
 ssl_enable=NO
+pam_service_name=ftp
 EOF
 
 # Step 3: Allow manual username and password input
