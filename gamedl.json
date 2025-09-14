@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "assets1.xboxlive.com",
+        "assets2.xboxlive.com",
+        "client.hikarifield.co.jp",
+        "csgo.wmsj.cn",
+        "dl.steam.clngaa.com",
+        "dl.steam.ksyna.com",
+        "dota2.wmsj.cn",
+        "download.cdp.bethesda.net",
+        "download.epicgames.com",
+        "download.hikarifield.co.jp",
+        "download2.epicgames.com",
+        "download3.epicgames.com",
+        "download4.epicgames.com",
+        "epicgames-download1.akamaized.net",
+        "gamedownloads-rockstargames-com.akamaized.net",
+        "gog-cdn-lumen.secure2.footprint.net",
+        "origin-a.akamaihd.net",
+        "packagespc.xboxlive.com",
+        "ssl-lvlt.cdn.ea.com",
+        "st.dl.bscstorage.net",
+        "st.dl.eccdnx.com",
+        "st.dl.pinyuncloud.com",
+        "steampipe.steamcontent.tnkjmec.com",
+        "steampowered.com",
+        "uplaypc-s-ubisoft.cdn.ubionline.com.cn",
+        "wmsjsteam.com",
+        "xvcf1.xboxlive.com",
+        "xvcf2.xboxlive.com",
+        "xz.pphimalayanrt.com"
+      ],
+      "domain_suffix": [
+        "api.steampowered.com",
+        "cdn.ubi.com",
+        "cm.steampowered.com",
+        "dyn.riotcdn.net",
+        "rmbgame.net",
+        "steamchina.com",
+        "steamcontent.com",
+        "steamserver.net",
+        "steamstatic.com",
+        "steamusercontent.com",
+        "test.steampowered.com"
+      ]
+    }
+  ]
+}
